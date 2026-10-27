@@ -75,14 +75,17 @@ HTML5 · CSS3 (переменные, grid, clamp, IntersectionObserver) · Vanil
 
 ```
 misis-landing/
-├── index.html          # вся страница с якорной навигацией
-├── css/styles.css      # палитра МИСИС, адаптив, анимации
-├── js/main.js          # меню, фильтры, форма, демо-отправка заявок
+├── index.html              # вся страница с якорной навигацией
+├── css/styles.css          # палитра МИСИС, адаптив, анимации
+├── js/main.js              # меню, фильтры, форма, демо-отправка заявок
 ├── assets/
 │   ├── favicon.svg
-│   └── fonts/          # сюда — лицензионный Nekst (опционально)
-├── docs/               # скриншоты для README
-├── LICENSE             # MIT
+│   ├── logo-iykt-blue.png  # логотип для хедера
+│   ├── logo-iykt-white.png # логотип для футера
+│   └── fonts/              # сюда — лицензионный Nekst (опционально)
+├── docs/                   # скриншоты для README
+├── .github/workflows/      # автодеплой на Pages
+├── LICENSE                 # MIT
 └── README.md
 ```
 
@@ -97,7 +100,7 @@ python3 -m http.server 8000
 
 (или просто открыть `index.html` двойным кликом)
 
-**На GitHub Pages:** сайт публикуется из ветки `main` автоматически — достаточно `git push`, обновление подхватится через минуту. Проект также можно выложить на любой хостинг статики (Netlify, Vercel, сервер МИСИС по FTP).
+**На GitHub Pages (через Actions):** деплой автоматизирован workflow-файлом [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) — запускается при каждом пуше в `main` или вручную (вкладка **Actions → Deploy to GitHub Pages → Run workflow**). Собранная копия сайта выкладывается как артефакт и публикуется через официальные `actions/deploy-pages`. Проект также можно выложить на любой хостинг статики (Netlify, Vercel, сервер МИСИС по FTP).
 
 ## 📬 Подключение реальной отправки заявок
 
