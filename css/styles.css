@@ -706,6 +706,75 @@ p:last-child { margin-bottom: 0; }
 .feature h3 { font-size: 16.5px; margin: 0 0 6px; }
 .feature p { font-size: 14px; color: var(--muted); margin: 0; }
 
+/* ---------- Цитата и. о. заведующего кафедрой ---------- */
+.quote-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: center;
+  margin: 56px 0 0;
+  padding: 36px;
+  background:
+    radial-gradient(ellipse 55% 90% at 100% 0%, rgba(5, 65, 240, 0.35), transparent 65%),
+    var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.quote-card::before {
+  content: "“";
+  position: absolute;
+  right: 28px;
+  top: -26px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 170px;
+  line-height: 1;
+  font-weight: 900;
+  color: rgba(255, 209, 16, 0.18);
+  pointer-events: none;
+}
+.quote-card__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.quote-card__text {
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  line-height: 1.55;
+  color: var(--white);
+}
+.quote-card__author { display: flex; flex-direction: column; gap: 3px; }
+.quote-card__author strong {
+  font-size: 16.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.quote-card__author span {
+  font-size: 13.5px;
+  color: var(--lavender);
+}
+
+@media (max-width: 860px) {
+  .quote-card {
+    grid-template-columns: 132px 1fr;
+    gap: 22px;
+    padding: 26px;
+    margin-top: 44px;
+  }
+  .quote-card__text { font-size: 16px; margin-bottom: 16px; }
+}
+@media (max-width: 640px) {
+  .quote-card {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+  .quote-card__photo { max-width: 220px; margin: 0 auto; }
+}
+
 /* ---------- FAQ ---------- */
 .faq { background: var(--tint-2); }
 .faq__inner {
